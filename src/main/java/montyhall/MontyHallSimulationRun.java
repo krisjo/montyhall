@@ -12,15 +12,16 @@ public class MontyHallSimulationRun {
 
 			int switchSuccesses = 0;
 			int nonSwitchSuccesses = 0;
+			RandomIntegerGenerator randomIntegerGenerator = new RandomIntegerGenerator();
 
 			for (int executionNr = 0; executionNr < nrofExecutions; executionNr++) {
-				MontyHallGame montyHallGame = new MontyHallGame();
+				MontyHallGame montyHallGame = new MontyHallGame(randomIntegerGenerator);
 				if (MontyHallSimulator.isSwitchSuccessful(montyHallGame)) {
 					switchSuccesses++;
 				}
 			}
 			for (int executionNr = 0; executionNr < nrofExecutions; executionNr++) {
-				MontyHallGame montyHallGame = new MontyHallGame();
+				MontyHallGame montyHallGame = new MontyHallGame(randomIntegerGenerator);
 				if (MontyHallSimulator.isNonSwitchSuccessful(montyHallGame)) {
 					nonSwitchSuccesses++;
 				}

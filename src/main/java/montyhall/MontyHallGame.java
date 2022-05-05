@@ -2,8 +2,10 @@ package montyhall;
 
 public class MontyHallGame {
 	private final BoxNr moneyBoxNr;
+	private final RandomIntegerGenerator randomIntegerGenerator;
 
-	public MontyHallGame() {
+	public MontyHallGame(RandomIntegerGenerator randomIntegerGenerator) {
+		this.randomIntegerGenerator = randomIntegerGenerator;
 		moneyBoxNr = getRandomBoxNr();
 	}
 
@@ -14,12 +16,13 @@ public class MontyHallGame {
 	public BoxNr getMoneyBoxNr() {
 		return moneyBoxNr;
 	}
+
 	public BoxNr getNonMoneyBoxNrExcept(BoxNr chosenBoxNr) {
 		return getOtherBoxNr(moneyBoxNr, chosenBoxNr);
 	}
 
 	public BoxNr getRandomBoxNr() {
-		return new BoxNr(getRandomNumber0To(BoxNr.maxBoxNr));
+		return new BoxNr(randomIntegerGenerator.getRandomNumber0To(BoxNr.maxBoxNr));
 	}
 
 	public BoxNr getOtherBoxNr(BoxNr notThis, BoxNr notThisEither) {
@@ -31,7 +34,4 @@ public class MontyHallGame {
 		return new BoxNr(freeBoxNr);
 	}
 
-	private int getRandomNumber0To(int max) {
-		return (int)(Math.random() * (max + 1));
-	}
 }
