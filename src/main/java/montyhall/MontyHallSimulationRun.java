@@ -28,8 +28,9 @@ public class MontyHallSimulationRun {
 			}
 
 			System.out.printf("Result: Of %d executions %d switches succeeded and %d non-switches succeeded%n", nrofExecutions, switchSuccesses, nonSwitchSuccesses);
+
 		} else {
-			System.out.printf("Usage: %s [number_of_executions]%n", MontyHallSimulationRun.class.getName());
+			System.out.printf("Usage: %s [number_of_executions]", MontyHallSimulationRun.class.getName());
 		}
 	}
 
