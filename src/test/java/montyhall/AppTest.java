@@ -1,4 +1,4 @@
-package webstep;
+package montyhall;
 
 import static org.junit.Assert.assertTrue;
 
